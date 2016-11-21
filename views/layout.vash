@@ -5,6 +5,7 @@
   <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
   <!--if you drag and drop, it will put the path in the form ../public/css and that is not correct since it assumes that every file from the server is accesible from the browser, but that is not good since you don't want the server.js to be accesible to the browser-->
+  @html.block("head")
   <link href="/css/site.css" rel="stylesheet" />
 </head>
 <body>
@@ -43,5 +44,8 @@
   <script src="/lib/jquery/jquery.min.js"></script>
   <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/lib/underscore/underscore.js"></script>
+  <script src="/lib/angular/angular.min.js"></script>
+  <script src="/lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+  @html.block("scripts")
 </body>
 </html>

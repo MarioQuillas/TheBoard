@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="controllers\homeController.js" />
     <Compile Include="controllers\index.js" />
+    <Compile Include="controllers\notesController.js" />
     <Compile Include="data\database.js" />
     <Compile Include="data\index.js" />
     <Compile Include="data\seedData.js" />
@@ -40,6 +41,10 @@
     <Content Include=".bowerrc" />
     <Content Include="package.json" />
     <Content Include="public\css\site.css" />
+    <Content Include="public\images\note-blue.png" />
+    <Content Include="public\images\note-green.png" />
+    <Content Include="public\images\note-orange.png" />
+    <Content Include="public\images\note-yellow.png" />
     <Content Include="README.md" />
     <Content Include="views\ejs\index.ejs" />
     <Content Include="views\ejs\layout.ejs" />
@@ -47,14 +52,20 @@
     <Content Include="views\jade\index.jade" />
     <Content Include="views\jade\layout.jade" />
     <Content Include="views\layout.vash" />
+    <Content Include="views\notes.vash" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />
     <Folder Include="data\" />
     <Folder Include="public\" />
     <Folder Include="public\css\" />
+    <Folder Include="public\images\" />
+    <Folder Include="typings\globals\body-parser\" />
+    <Folder Include="typings\globals\connect-flash\" />
+    <Folder Include="typings\globals\cookie-parser\" />
     <Folder Include="typings\globals\ejs-locals\" />
     <Folder Include="typings\globals\ejs\" />
+    <Folder Include="typings\globals\express-session\" />
     <Folder Include="typings\globals\mongodb\" />
     <Folder Include="typings\globals\msnodesql\" />
     <Folder Include="views\" />
@@ -68,8 +79,12 @@
     <Folder Include="views\ejs\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="typings\globals\body-parser\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\connect-flash\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\cookie-parser\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\ejs-locals\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\ejs\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\express-session\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mongodb\index.d.ts" />

@@ -10,7 +10,8 @@
             if (err) {
                 next(err);
             } else {
-                db.notes.find({ notes: { $size: 5 } }).toArray(function(err, results) {
+                //{ notes: { $size: 5 } }
+                db.notes.find().toArray(function(err, results) {
                     if (err) {
                         next(err, null);
                     } else {
@@ -19,6 +20,59 @@
                 });
             }
         });
+    };
+
+    data.getNotes = function(categoryName, next) {
+        database.getDb(function(err, db) {
+            if (err) {
+                next(err)
+            } else {
+                db.notes.findOne({name : categoryName}, next);
+            }
+        });
+    };
+
+    data.addNote = function(categoryName, noteToInsert, next) {
+        database.getDb(function(err, db) {
+            if (err) {
+                next(err);
+            } else {
+                db.notes.update({ name: categoryName }, { $push: { notes: noteToInsert } }, next);
+            }
+        });
+    };
+
+    data.createNewCategory = function (categoryName, next) {
+        database.getDb(function(err, db) {
+            if (err) {
+                next(err);
+            } else {
+                db.notes.find({ name: categoryName }).count(function(err, count) {
+                    if (err) {
+                        next(err);
+                    } else {
+                        if (count != 0) {
+                            next("category already exists");
+                        } else {
+                            var cat = {
+                                name: categoryName,
+                                notes: []
+                            };
+
+                            db.notes.insert(cat,
+                                function (err) {
+                                    if (err) {
+                                        next(err);
+                                    } else {
+                                        next(null);
+                                    }
+                                });
+                        }
+                    }
+                });
+            }
+        });
+        
     };
 
     function seedDatabase() {
