@@ -37,6 +37,7 @@
     <Compile Include="data\index.js" />
     <Compile Include="data\seedData.js" />
     <Compile Include="gruntfile.js" />
+    <Compile Include="public\js\notesView.js" />
     <Compile Include="server.js" />
     <Content Include=".bowerrc" />
     <Content Include="package.json" />
@@ -60,6 +61,7 @@
     <Folder Include="public\" />
     <Folder Include="public\css\" />
     <Folder Include="public\images\" />
+    <Folder Include="public\js\" />
     <Folder Include="typings\globals\body-parser\" />
     <Folder Include="typings\globals\connect-flash\" />
     <Folder Include="typings\globals\cookie-parser\" />
