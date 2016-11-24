@@ -1,14 +1,16 @@
 ﻿// notesController.js
-(function (notesController) {
+(function(notesController) {
     var data = require("../data");
+    var auth = require("../auth");
 
     notesController.init = function(app) {
         app.get("/api/notes/:categoryName",
-            function (req, res) {
+            auth.ensureApiAuthenticated,
+            function(req, res) {
                 var categoryName = req.params.categoryName;
 
                 data.getNotes(categoryName,
-                    function (err, notes) {
+                    function(err, notes) {
                         if (err) {
                             res.send(400, err);
                         } else {
@@ -19,6 +21,7 @@
             });
 
         app.post("/api/notes/:categoryName",
+            auth.ensureApiAuthenticated,
             function(req, res) {
                 var categoryName = req.params.categoryName;
 
@@ -28,14 +31,16 @@
                     author: "Mario"
                 };
 
-                data.addNote(categoryName, noteToInsert, function(err) {
-                    if (err) {
-                        res.send(400, "Failed to add note to data store");
-                    } else {
-                        res.set("Content-Type", "application/json");
-                        res.send(201, noteToInsert);
-                    }
-                });
+                data.addNote(categoryName,
+                    noteToInsert,
+                    function(err) {
+                        if (err) {
+                            res.send(400, "Failed to add note to data store");
+                        } else {
+                            res.set("Content-Type", "application/json");
+                            res.send(201, noteToInsert);
+                        }
+                    });
             });
     };
 

@@ -38,6 +38,10 @@ app.use(flash());
 // set the public static resource folder
 app.use(express.static(__dirname + "/public"));
 
+// use authentification
+var auth = require("./auth")
+auth.init(app);
+
 // Map the routes
 controllers.init(app);
 
