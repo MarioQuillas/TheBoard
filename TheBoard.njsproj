@@ -30,6 +30,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="auth\hasher.js" />
+    <Compile Include="auth\index.js" />
     <Compile Include="controllers\homeController.js" />
     <Compile Include="controllers\index.js" />
     <Compile Include="controllers\notesController.js" />
@@ -39,6 +41,7 @@
     <Compile Include="gruntfile.js" />
     <Compile Include="public\js\notesView.js" />
     <Compile Include="server.js" />
+    <Compile Include="updater\index.js" />
     <Content Include=".bowerrc" />
     <Content Include="package.json" />
     <Content Include="public\css\site.css" />
@@ -53,11 +56,15 @@
     <Content Include="views\jade\index.jade" />
     <Content Include="views\jade\layout.jade" />
     <Content Include="views\layout.vash" />
+    <Content Include="views\login.vash" />
     <Content Include="views\notes.vash" />
+    <Content Include="views\register.vash" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />
     <Folder Include="data\" />
+    <Folder Include="auth\" />
+    <Folder Include="updater\" />
     <Folder Include="public\" />
     <Folder Include="public\css\" />
     <Folder Include="public\images\" />
@@ -70,6 +77,9 @@
     <Folder Include="typings\globals\express-session\" />
     <Folder Include="typings\globals\mongodb\" />
     <Folder Include="typings\globals\msnodesql\" />
+    <Folder Include="typings\globals\passport-local\" />
+    <Folder Include="typings\globals\passport\" />
+    <Folder Include="typings\globals\socket.io\" />
     <Folder Include="views\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
@@ -92,6 +102,9 @@
     <TypeScriptCompile Include="typings\globals\mongodb\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\msnodesql\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\passport-local\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\passport\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\socket.io\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\underscore\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
