@@ -64,6 +64,7 @@
     <Folder Include="controllers\" />
     <Folder Include="data\" />
     <Folder Include="auth\" />
+    <Folder Include="typings\globals\grunt\" />
     <Folder Include="updater\" />
     <Folder Include="public\" />
     <Folder Include="public\css\" />
@@ -98,6 +99,7 @@
     <TypeScriptCompile Include="typings\globals\ejs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express-session\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\grunt\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mongodb\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\msnodesql\index.d.ts" />
